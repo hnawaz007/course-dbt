@@ -5,9 +5,8 @@
 }}
 
 SELECT
+order_id,
 product_id,
-name,
-price,
-inventory
+quantity
  
-FROM {{ source('tutorial', 'products') }}
+FROM {{ source('src_postgres', 'order_items') }}

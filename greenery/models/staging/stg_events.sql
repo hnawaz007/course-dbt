@@ -14,4 +14,4 @@ event_type,
 order_id,
 product_id 
  
-FROM {{ source('tutorial', 'events') }}
+FROM {{ source('src_postgres', 'events') }}

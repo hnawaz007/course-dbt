@@ -9,4 +9,4 @@ promo_id,
 discount,
 status
  
-FROM {{ source('tutorial', 'promos') }}
+FROM {{ source('src_postgres', 'promos') }}

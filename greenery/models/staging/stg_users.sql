@@ -14,4 +14,4 @@ created_at,
 updated_at,
 address_id
  
-FROM {{ source('tutorial', 'users') }}
+FROM {{ source('src_postgres', 'users') }}

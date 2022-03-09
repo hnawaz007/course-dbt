@@ -20,27 +20,3 @@ sources:
         loaded_at_field: created_at
         description: >
           Contains demographic information about each superhero
-      - name: addresses 
-        description: >
-          Contains address information of a user
-      - name: events
-        loaded_at_field: created_at
-        description: >
-          Captures each sessions event aout user activity on the site
-      - name: order_items 
-        description: >
-          Contains order information of an order 
-      - name: orders
-        loaded_at_field: created_at
-        description: >
-          Contains order details such as order id, shipping & tracking details and estimated delivery
-      - name: products 
-        description: >
-          Contains products we sell and inventory information
-      - name: promos 
-        description: >
-          Captures sales promotion information company is offering on it's products
-      - name: users
-        loaded_at_field: created_at
-        description: >
-          Contains user details; user id and user contact information
