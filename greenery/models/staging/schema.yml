@@ -26,13 +26,14 @@ models:
       - name: order_id
         description: "order_id and product_id make up the composite primary key for the order_items table"
         tests:
-          - unique
           - not_null
       - name: product_id
         description: "order_id and product_id make up the composite primary key for the  order_items table"
         tests:
-          - unique
           - not_null
+      - name: quantity
+        tests:
+          - positive_values
 
   - name: stg_orders
     description:  Contains order details such as order id, shipping & tracking details and estimated delivery
@@ -42,6 +43,12 @@ models:
         tests:
           - unique
           - not_null
+      - name: order_cost
+        tests:
+          - positive_values
+      - name: shipping_cost
+        tests:
+          - positive_values
 
   - name: stg_product
     description: Contains products we sell and inventory information
@@ -51,6 +58,12 @@ models:
         tests:
           - unique
           - not_null
+      - name: price
+        tests:
+          - positive_values
+      - name: inventory
+        tests:
+          - positive_values
 
   - name: stg_promos
     description: Captures sales promotion information company is offering on it's products
@@ -60,6 +73,13 @@ models:
         tests:
           - unique
           - not_null
+      - name: discount
+        tests:
+          - positive_values
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['active', 'inactive']
 
   - name: stg_users
     description: Contains user details; user id and user contact information
