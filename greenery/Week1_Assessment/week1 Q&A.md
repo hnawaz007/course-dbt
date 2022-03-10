@@ -1,7 +1,7 @@
 ## WEEK 1 - Questions & Answers
 
 ### 1 - How many users do we have?
-Answer: We have **130** unique users in our system.
+**_Answer: We have **130** unique users in our system._**
 
 SQL Query:
 ``` sql
