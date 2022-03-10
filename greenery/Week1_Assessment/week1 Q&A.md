@@ -1,7 +1,7 @@
 ## WEEK 1 - Questions & Answers
 
 ### 1 - How many users do we have?
-**_Answer: We have **130** unique users in our system._**
+Answer: We have **130** unique users in our system.
 
 SQL Query:
 ``` sql
@@ -29,7 +29,7 @@ select
 from avg_order_per_hr
 ```
 
-## 3 - On average, how long does an order take from being placed to being delivered?
+## 3 - On average how long does an order take from being placed to being delivered?
 Answer: The average duration for order completion is **3 days, 21 hours and 24 minutes**
 
 SQL Query:
