@@ -1,6 +1,6 @@
 ## WEEK 1 - Questions & Answers
 
-### 1 - How many users do we have?
+## 1 - How many users do we have?
 Answer: We have **130** unique users in our system.
 
 SQL Query:
@@ -10,7 +10,7 @@ select
 from stg_users
 ```
 
-### 2 - On average, how many orders do we receive per hour?
+## 2 - On average, how many orders do we receive per hour?
 Answer: We receive **7** orders per hour.
 
 SQL Query:
@@ -48,7 +48,7 @@ select
 from avg_delivery_time
 ```
 
-### 4 - How many users have only made one purchase? Two purchases? Three+ purchases?
+## 4 - How many users have only made one purchase? Two purchases? Three+ purchases?
 Answer: We have **25** users who made only one purchase. **28** users made two purchases while **71** users made three or more purchases.
 | # purchases     | # users |
 |-----------------|---------|
@@ -85,7 +85,7 @@ group by
   end
 ```
 
-### 5 - On average, how many unique sessions do we have per hour?
+## 5 - On average, how many unique sessions do we have per hour?
 Answer: We have **16** unique sessions per hour.
 
 SQL Query:
