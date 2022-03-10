@@ -1,4 +1,4 @@
-# Welcome to Haq Nawaz dbt project!
+# Welcome to Haq Nawaz greenery dbt project!
 
 ### Week1 Self Assesment Questions: 
 Answer below questions using the data available using SQL queries:
