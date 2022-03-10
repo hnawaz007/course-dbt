@@ -22,10 +22,10 @@ sources:
       - name: events
         loaded_at_field: created_at
         description: >
-          Captures each sessions event of a user's activity on the site
+          Captures each sessions event of a user's activity on the site i.e. add to cart, checkout, navigation between pages
       - name: order_items 
         description: >
-          Contains order information of an order 
+          Contains information of an order i.e. which product is bought and it's price and qauntity 
       - name: orders
         loaded_at_field: created_at
         description: >
