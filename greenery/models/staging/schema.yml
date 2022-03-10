@@ -49,6 +49,10 @@ models:
       - name: shipping_cost
         tests:
           - positive_values
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['shipped', 'preparing', 'delivered']
 
   - name: stg_product
     description: Contains products we sell and inventory information
