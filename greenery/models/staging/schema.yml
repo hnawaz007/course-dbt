@@ -22,6 +22,11 @@ models:
 
   - name: stg_order_items
     description:  Contains information of an order i.e. which product is bought and it's price and qauntity 
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_id
+            - product_id
     columns:
       - name: order_id
         description: "order_id and product_id make up the composite primary key for the order_items table"
