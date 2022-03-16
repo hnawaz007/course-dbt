@@ -6,7 +6,7 @@ models:
     description: Contains address information of a user
     columns:
       - name: address_id
-        description: "address_id is the primary key for the adresses table"
+        description: address_id is the primary key for the adresses table
         tests:
           - unique
           - not_null
@@ -15,7 +15,7 @@ models:
     description: Captures each sessions event of a user's activity on the site i.e. add to cart, checkout, navigation between pages
     columns:
       - name: event_id
-        description: "event_id is the primary key for the event table"
+        description: event_id is the primary key for the event table
         tests:
           - unique
           - not_null
@@ -29,11 +29,11 @@ models:
             - product_id
     columns:
       - name: order_id
-        description: "order_id and product_id make up the composite primary key for the order_items table"
+        description: order_id and product_id make up the composite primary key for the order_items table
         tests:
           - not_null
       - name: product_id
-        description: "order_id and product_id make up the composite primary key for the  order_items table"
+        description: order_id and product_id make up the composite primary key for the  order_items table
         tests:
           - not_null
       - name: quantity
@@ -44,7 +44,7 @@ models:
     description:  Contains order details such as order id, shipping & tracking details and estimated delivery
     columns:
       - name: order_id
-        description: "order_id primary key for the orders table"
+        description: order_id primary key for the orders table
         tests:
           - unique
           - not_null
@@ -63,7 +63,7 @@ models:
     description: Contains products we sell and inventory information
     columns:
       - name: product_id
-        description: "product_id is the primary key for the prodct table"
+        description: product_id is the primary key for the prodct table
         tests:
           - unique
           - not_null
@@ -78,7 +78,7 @@ models:
     description: Captures sales promotion information company is offering on it's products
     columns:
       - name: promo_id
-        description: "promo_id is the primary key for the promos table"
+        description: promo_id is the primary key for the promos table
         tests:
           - unique
           - not_null
@@ -94,7 +94,7 @@ models:
     description: Contains user details; user id and user contact information
     columns:
       - name: user_id
-        description: "user_id is the primary key for the users table"
+        description: user_id is the primary key for the users table
         tests:
           - unique
           - not_null

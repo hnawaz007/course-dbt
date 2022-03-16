@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+
+  - name: stg_postgres # name of the source 
+    schema: dbt_haq_n # this is the schema our staging data lives in
+    database: dbt # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: stg_addresses 
+        description: >
+          Contains address information of a user
+      - name: stg_events
+        loaded_at_field: created_at
+        description: >
+          Captures each sessions event of a user's activity on the site i.e. add to cart, checkout, navigation between pages
+      - name: stg_order_items 
+        description: >
+          Contains information of an order i.e. which product is bought and it's price and qauntity 
+      - name: stg_orders
+        loaded_at_field: created_at
+        description: >
+          Contains order details such as order id, shipping & tracking details and estimated delivery
+      - name: stg_products 
+        description: >
+          Contains products we sell and products inventory information
+      - name: promos 
+        description: >
+          Captures sales promotion information company is offering on it's products
+      - name: stg_users
+        loaded_at_field: created_at
+        description: >
+          Contains user details; user id and user contact information
