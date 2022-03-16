@@ -6,7 +6,7 @@
 
 SELECT
   p.product_id,
-  p.name as product_name,
+  p.product_name,
   p.price,
   p.inventory
 FROM {{ ref('stg_products') }} p

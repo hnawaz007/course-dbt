@@ -54,7 +54,7 @@ models:
       - name: shipping_cost
         tests:
           - positive_values
-      - name: status
+      - name: order_status
         tests:
           - accepted_values:
               values: ['shipped', 'preparing', 'delivered']
