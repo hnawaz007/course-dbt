@@ -3,7 +3,7 @@ version: 2
 models:
 
   - name: fact_orders
-    description:  Contains order details such as order id, shipping & tracking details and estimated delivery
+    description:  Contains order details such as order id, shipping & tracking details and estimated delivery. Combined Promos dimension to orders so we have promotions details on each order.
 
   - name: dim_products
     description: Contains products we sell and inventory information
@@ -12,19 +12,19 @@ models:
         description: product_id is the primary key for the prodct table
 
   - name: dim_users
-    description: Contains user details; user id and user contact information
+    description: Contains user details; user id and user contact information. Denormalized users and addresses table to give a full picture of a user.
     columns:
       - name: user_id
         description: user_id is the primary key for the users table
 
   - name: user_order_facts
-    description: contains order information at the user level
+    description: contains order information at the user level. Aggregate order data at user level so we can perform user order analaysis.
     columns:
       - name: user_id
         description: user_id is the primary key for the users table
 
   - name: fact_page_views 
-    description: contains all page view events from greenery's events data
+    description: contains all page view events from greenery's events data. Combined user and product information at event level so we have one big table for event analysis.
     columns:
       - name: event_id
-        description: user_id is the primary key for the users table
+        description: event_id is the primary key for the users table

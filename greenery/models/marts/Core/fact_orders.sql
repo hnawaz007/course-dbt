@@ -15,7 +15,7 @@ SELECT
   COALESCE(pc.promo_id, 'NA')  AS promo_code_name,
   COALESCE(pc.discount, 0) AS promo_code_discount,
   COALESCE(pc.promo_status, 'NA') AS promo_status,
-  COALESCE(o.order_status, 'NA') AS shipment_status,
+  COALESCE(o.order_status, 'NA') AS order_status,
   COALESCE(EXTRACT(DAY FROM delivered_at - o.order_placed_at ),0) AS DateDifference
 FROM {{ ref('stg_orders') }} o
 LEFT JOIN {{ ref('stg_promos') }} pc

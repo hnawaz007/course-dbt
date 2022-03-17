@@ -85,7 +85,7 @@ models:
       - name: discount
         tests:
           - positive_values
-      - name: status
+      - name: promo_status
         tests:
           - accepted_values:
               values: ['active', 'inactive']
