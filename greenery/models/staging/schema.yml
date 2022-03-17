@@ -10,6 +10,11 @@ models:
         tests:
           - unique
           - not_null
+      - name: zipcode
+        description: The zipcode of the address
+        tests:
+          - field_length:
+              length_of_field: 5
 
   - name: stg_events
     description: Captures each sessions event of a user's activity on the site i.e. add to cart, checkout, navigation between pages
@@ -19,6 +24,17 @@ models:
         tests:
           - unique
           - not_null
+      - name: session_id
+        description: session_id unique identifier for each browsing session on the greenery site
+        tests:
+          - not_null
+      - name: user_id
+        description: user_id of the user that this event is associated with
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_users')
+              field: user_id
 
   - name: stg_order_items
     description:  Contains information of an order i.e. which product is bought and it's price and qauntity 
@@ -32,10 +48,16 @@ models:
         description: order_id and product_id make up the composite primary key for the order_items table
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
       - name: product_id
         description: order_id and product_id make up the composite primary key for the  order_items table
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_products')
+              field: product_id
       - name: quantity
         tests:
           - positive_values
@@ -58,6 +80,16 @@ models:
         tests:
           - accepted_values:
               values: ['shipped', 'preparing', 'delivered']
+      - name: promo_id
+        description: Promo_id of promotion code that is used for an order
+        tests:
+          - relationships:
+              to: ref('stg_promos')
+              field: promo_id
+      - name: order_total
+        description: Total cost of the order including shipping
+        tests:
+          - positive_values
 
   - name: stg_product
     description: Contains products we sell and inventory information
@@ -98,3 +130,17 @@ models:
         tests:
           - unique
           - not_null
+      - name: first_name
+        description: first name of the user
+        tests:
+          - not_null
+      - name: last_name
+        description: last name of the user
+        tests:
+          - not_null
+      - name: address_id
+        description: default delivery address for the user
+        tests:
+          - relationships:
+              to: ref('cln_addresses')
+              field: address_id
