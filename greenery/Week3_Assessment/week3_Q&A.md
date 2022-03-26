@@ -81,10 +81,10 @@ ORDER BY 2 DESC
 **Answer**: I have added the post hook `dbt_project.yml` file. It is after greenery's model tag.
 
 ## Part 4 - Install a package (i.e. dbt-utils, dbt-expectations) and apply one or more of the macros to your project
-**Answer**: 
-    * I have used `used dbt.utils` pacakge and form it used `get_column_values` to set values of `event_type` list.
+**Answer**: I have used `used dbt.utils` pacakge and form it used `get_column_values` to set values of `event_type` list.
     * I have used the following macro to clean up the case statement to build event type metrics.
-        ```{%- for event_type in event_types %}
+        ``` 
+	{%- for event_type in event_types %}
             sum(case when e.event_type = '{{event_type}}' then 1 else 0 end) as {{event_type}}_total
             {%- if not loop.last %},{% endif -%}
             {% endfor %}
