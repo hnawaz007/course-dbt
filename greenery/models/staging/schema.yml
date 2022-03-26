@@ -142,5 +142,5 @@ models:
         description: default delivery address for the user
         tests:
           - relationships:
-              to: ref('cln_addresses')
+              to: ref('stg_addresses')
               field: address_id
