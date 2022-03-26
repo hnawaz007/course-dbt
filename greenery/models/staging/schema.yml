@@ -91,7 +91,7 @@ models:
         tests:
           - positive_values
 
-  - name: stg_product
+  - name: stg_products
     description: Contains products we sell and inventory information
     columns:
       - name: product_id

@@ -17,8 +17,8 @@ SELECT
   u.country,
   SUM(o.order_cost) AS order_cost,
   SUM(o.order_total) AS order_total
-FROM {{ ref('dim_users') }} u
-LEFT JOIN {{ ref('fact_orders') }} o
+FROM {{ ref('int_users') }} u
+LEFT JOIN {{ ref('stg_orders') }} o
   ON o.user_id = u.user_id
 Where order_total > 0
 GROUP BY

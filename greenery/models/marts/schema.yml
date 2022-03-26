@@ -17,14 +17,24 @@ models:
       - name: user_id
         description: user_id is the primary key for the users table
 
-  - name: user_order_facts
+  - name: fact_user_order
     description: contains order information at the user level. Aggregate order data at user level so we can perform user order analaysis.
     columns:
       - name: user_id
         description: user_id is the primary key for the users table
+  - name: int_events
+    description: contains event information,intermediate table used for fact_page_views fact.
+    columns:
+      - name: event_id
+        description: event_id is the primary key for the users table
 
   - name: fact_page_views 
     description: contains all page view events from greenery's events data. Combined user and product information at event level so we have one big table for event analysis.
+    columns:
+      - name: event_id
+        description: event_id is the primary key for the users table
+  - name: int_session_agg 
+    description: Contains aggregate level session events to calculate overall conversion level metrics
     columns:
       - name: event_id
         description: event_id is the primary key for the users table
