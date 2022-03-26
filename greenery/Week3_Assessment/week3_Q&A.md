@@ -18,7 +18,7 @@ FROM fact_products
 ## 2 - What is our conversion rate by product? 
 **Answer**: The following table displays the conversion rate of each product.
 
-SQL Query for indicators:
+SQL Query for product conversion:
 ``` sql
 SELECT
   product_name,
@@ -87,7 +87,8 @@ ORDER BY 2 DESC
         ```{%- for event_type in event_types %}
             sum(case when e.event_type = '{{event_type}}' then 1 else 0 end) as {{event_type}}_total
             {%- if not loop.last %},{% endif -%}
-            {% endfor %}```
+            {% endfor %}
+	    ```
 	
     * Also, used `dbt_utils.unique_combination_of_columns` function to check if  `combination_of_columns` ( order_id and product_id) are unique in stg_order_items table.
 
