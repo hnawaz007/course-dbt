@@ -92,4 +92,4 @@ ORDER BY 2 DESC
 Also, used `dbt_utils.unique_combination_of_columns` function to check if  `combination_of_columns` ( order_id and product_id) are unique in stg_order_items table.
 
 ## Part 5 - Show (using dbt docs and the model DAGs) how you have simplified or improved a DAG using macros and/or dbt packages.
-**Answer**: See the image `model_dag.png' in this directory for the updated DAG.
+**Answer**: See the image `model_dag_week3.png' in this directory for the updated DAG.
