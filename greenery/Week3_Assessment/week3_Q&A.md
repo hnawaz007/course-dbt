@@ -82,7 +82,7 @@ ORDER BY 2 DESC
 
 ## Part 4 - Install a package (i.e. dbt-utils, dbt-expectations) and apply one or more of the macros to your project
 **Answer**: I have used `used dbt.utils` pacakge and form it used `get_column_values` to set values of `event_type` list.
-    * I have used the following macro to clean up the case statement to build event type metrics.
+    I have used the following macro to clean up the case statement to build event type metrics.
 
 	``` 	{%- for event_type in event_types %}
             sum(case when e.event_type = '{{event_type}}' then 1 else 0 end) as {{event_type}}_total
@@ -90,7 +90,7 @@ ORDER BY 2 DESC
             {% endfor %}
 	```
 	
-    * Also, used `dbt_utils.unique_combination_of_columns` function to check if  `combination_of_columns` ( order_id and product_id) are unique in stg_order_items table.
+    Also, used `dbt_utils.unique_combination_of_columns` function to check if  `combination_of_columns` ( order_id and product_id) are unique in stg_order_items table.
 
 ## Part 5 - Show (using dbt docs and the model DAGs) how you have simplified or improved a DAG using macros and/or dbt packages.
 **Answer**: See the image `model_dag.png' in this directory for the updated DAG.
