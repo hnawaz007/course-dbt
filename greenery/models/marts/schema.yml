@@ -32,7 +32,13 @@ models:
     description: contains all page view events from greenery's events data. Combined user and product information at event level so we have one big table for event analysis.
     columns:
       - name: event_id
+      
+  - name: fact_products
+    description: contains product leve fact metrics. This model helps answer product's conversion rate question.
+    columns:
+      - name: session_id
         description: event_id is the primary key for the users table
+        
   - name: int_session_agg 
     description: Contains aggregate level session events to calculate overall conversion level metrics
     columns:
