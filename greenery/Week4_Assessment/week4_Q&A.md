@@ -8,6 +8,7 @@ In the existing rows "dbt_valid_to" date is filled marking these rows inactive. 
 ![snapshot model](snapshot.png)
 
 ## Part 2. Modeling challenge
+**Note**: To answer the product funnel Q&A I have added a new model called `fact_product_funnel` model. This is mainly based on `int_session_agg` model designed to created product funnel buckets.
 
 ## 1 How are our users moving through the product funnel?
 **Answer**: Our users movement through product funnel is not optimal to say the least. We need to improve user experience on our site to achieve better conversion rate.
