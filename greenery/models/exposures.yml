@@ -1,0 +1,17 @@
+version: 2
+
+exposures:
+  
+  - name: Product Funnel Dashboard
+    type: dashboard
+    maturity: high
+    url: https://bi.tool/dashboards/1
+    description: >
+      Models that are critical to our product funnel dashboard
+    
+    depends_on:
+      - ref('fact_product_funnel')
+      
+    owner:
+      name: Haq from DataTeam
+      email: hnawaz@greenery.com

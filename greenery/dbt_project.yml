@@ -37,10 +37,9 @@ seeds:
 # using the `{{ config(...) }}` macro.
 models:
   greenery:
+    +materialized: table
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
   post-hook:
     - "GRANT SELECT ON {{ this }} TO reporting"
-on-run-end:
-  - "GRANT USAGE on SCHEMA  \"{{ schema  }}\" TO reporting"
+
+on-run-end: "GRANT USAGE ON SCHEMA \"{{ schema }}\" TO reporting"
