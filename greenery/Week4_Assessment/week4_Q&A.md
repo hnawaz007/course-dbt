@@ -19,7 +19,8 @@ In the existing rows "dbt_valid_to" date is filled marking these rows inactive. 
 It seems we have a major issue from cart to checkout steps which leads to this drop off.
 
 SQL Query:
-``` with base_fnl_metrics as (
+``` 
+with base_fnl_metrics as (
      Select
         sum(total_sessions_fnl) as session_fnl,
         sum(total_sessions_cart_to_checkout_fnl) as cart_to_checkout_fnl,
